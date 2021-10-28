@@ -1,0 +1,21 @@
+<div class="pokemon-card">
+    <div class="pokemon-card__image">
+        <img [src]="'https://assets.pokemon.com/assets/cms2/img/pokedex/detail/' + formattingZero(pokemon.number, 3) + '.png'"
+         alt="Bulbassaur">
+    </div>
+
+    <div class="pokemon-card__number">
+        <p>N° {{formattingZero(pokemon.number, 3)}}</p>
+    </div>
+
+    <div class="pokemon-card__name">
+        <p>{{pokemon.name}}</p>
+    </div>
+
+    <div class="pokemon-card__types">
+        <div class="pokemon-card__type" 
+        *ngFor="let type of pokemon.types"
+        [class]="'pokemon-card__type--' + type.toLowerCase()"
+        >{{ type }}</div>
+    </div>
+</div>
